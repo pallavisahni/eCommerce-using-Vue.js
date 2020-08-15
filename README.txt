@@ -22,4 +22,4 @@ In this section we have created a basic HTML file and add a link to a Vue CDN in
 
 
 
-[]!https://github.com/pallavisahni/eCommerce-using-Vue.js/Screenshot.png
+![](/Screenshot.png)
