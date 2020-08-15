@@ -21,5 +21,4 @@ In this section we have created a basic HTML file and add a link to a Vue CDN in
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
 
-
-[]!/Users/pallavisahni/Downloads/GitHubProjects/eCommerce-using-Vue.js/Screenshot.png
+![](images/Screenshot.png)
