@@ -21,4 +21,5 @@ In this section we have created a basic HTML file and add a link to a Vue CDN in
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
 
-![](images/Screenshot.png)
+
+![](Screenshot.png)
