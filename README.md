@@ -1,6 +1,6 @@
-#eCommerce Website using Vue.js
+# eCommerce Website using Vue.js
 
-#What is Vue?
+## What is Vue?
 
 - Vue (or Vue.js) is an open-source front-end JavaScript framework.
 - Vue is the view layer of an MVC application (Model View Controller).
@@ -8,7 +8,7 @@
 
 In this section we have created a basic HTML file and add a link to a Vue CDN in the head, and create a <div> with an id of app.
 
-#Basic Steps
+### Basic Steps
 
 1. Create index.html file.
 2. Includes Vue with:
@@ -21,6 +21,7 @@ In this section we have created a basic HTML file and add a link to a Vue CDN in
 
 <production version, optimised for size and speed>
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
 
 
 
