@@ -11,13 +11,15 @@ In this section we have created a basic HTML file and add a link to a Vue CDN in
 #Basic Steps
 
 1. Create index.html file.
-2. Include Vue with:
-<!-- development version, includes helpful console warnings -->
+2. Includes Vue with:
+
+<development version, includes helpful console warnings>
+
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 		OR
 
-<!-- production version, optimized for size and speed -->
+<production version, optimised for size and speed>
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
 
