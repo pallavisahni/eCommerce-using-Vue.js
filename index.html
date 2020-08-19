@@ -6,7 +6,8 @@
   <title>Vue App</title>
   <!-- CSS only -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+<link rel="stylesheet" href="styling.css">
 </head>
 <body>
 
@@ -17,34 +18,49 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 
  <div class= "container" id="app">
-    <div class="form-inline">
-   <label for="max-exp">Select your price range: &nbsp;</label>
-   <input id="max-exp" type="text" class = "form-control w 25" v-model="maximum" style="width:10%">
-   </div>
-  Min($0)<input type="range" class="custom-range" min="0" max="300" v-model="maximum" style="width:30%">Max($300)
+    <h1> eCommmerce Website </h1> <br/>
+    <p><button class="btn btn-primary" @click="slider = !slider"> Filter By Range &nbsp; </button></p>
+
+<transition name="fade">
+      <div class="d-flex ml-2" v-if="slider">
+       <label for="max-exp">Select your price range: &nbsp;</label>
+       <input id="max-exp" type="text" class = "form-control w 25" v-model="maximum" style="width:5%">
+       &nbsp;&nbsp;Min($0)<input type="range" class="custom-range" min="0" max="300" v-model="maximum" style="width:30%">Max($300)
+     </div>
+</transition>
+
+<transition-group name="fade" tag="div"
+                  enter-active-class="fadeOutRight"
+                  leave-active-class="slideOutRight" >
    <div class="row d-flex mb-3 align-items-center"
-        v-for="item in products"
+        v-for="item in products" :key="item.id"
         v-if="item.price<=Number(maximum)">
+        <button class="btn btn-primary btn-sm"> </button>
       <div class="col-sm-4">
         <img class="img-fluid d-block" :src="item.image" :alt="name"/>
       </div>
    <div class="col">
      <h3 class="text-info">{{item.name}}</h3>
      <p class="mb-0">{{item.description}}</p>
-     <div class="h5 float-right">${{Number(item.price)}} </div>
+     <div class="h5 float-right">{{item.price|currency}} </div>
      </div>
 
    </div>
   </div>
-
-
+</transition-group>
   <script>
 
  var app = new Vue({
   el:'#app',
   data:{
+    slider:false,
     maximum:99,
     products:null
+  },
+  filters:{
+    currency:function(value){
+      return '$' + Number.parseFloat(value).toFixed(2);
+    }
   },
   mounted:function(){
     fetch('https://hplussport.com/api/products/order/price')
